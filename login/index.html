@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Login ke Kabelin</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-  </head>
-  <body>
-    <div class="login-form">
-      <div class="text">
-        SELAMAT DATANG!
-      </div>
-      <form id="loginForm">
-        <div class="field">
-          <div class="fas fa-envelope"></div>
-          <input type="text" placeholder="Surel" name="email" required>
-        </div>
-        <div class="field">
-          <div class="fas fa-lock"></div>
-          <input type="password" placeholder="Sandi" name="password" required>
-        </div>
-        <button type="submit">MASUK</button>
-        <div class="link">
-          Bukan anggota?
-          <a href="#">Daftar sekarang!</a>
-        </div>
-      </form>
-    </div>
+<head>
+  <meta charset="utf-8" />
+  <title>Login ke Kabelin</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+</head>
+<body>
+  <div class="login-form">
+    <div class="text">SELAMAT DATANG!</div>
 
-    <script>
-      document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // mencegah pengiriman form ke server
-        window.location.href = "../webpage/index.html"; // langsung redirect ke landing page
-      });
-    </script>
-  </body>
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <div class="fas fa-envelope"></div>
+        <input type="text" placeholder="Surel" name="email" required />
+      </div>
+
+      <div class="field">
+        <div class="fas fa-lock"></div>
+        <input type="password" placeholder="Sandi" name="password" required />
+      </div>
+
+      <button type="submit">MASUK</button>
+
+      <div class="link">
+        Bukan anggota?
+        <a href="#">Daftar sekarang!</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Tangkap event submit form
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // cegah form submit default (POST ke server)
+      
+      // Ambil nilai input (bisa digunakan untuk validasi jika mau)
+      const email = this.email.value.trim();
+      const password = this.password.value.trim();
+
+      // Optional: bisa tambah validasi sederhana di sini jika perlu
+
+      // Langsung redirect ke halaman landing page
+      window.location.href = "../webpage/index.html";
+    });
+  </script>
+</body>
 </html>
