@@ -1,32 +1,38 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal -->
 <html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Login ke Kabelin</title>
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-   </head>
-   <body>
-      <div class="login-form">
-         <div class="text">
-            SELAMAT DATANG!
-         </div>
-         <form action="../webpage/index.html" method="POST">
-            <div class="field">
-               <div class="fas fa-envelope"></div>
-               <input type="text" placeholder="Surel" name="email" required>
-            </div>
-            <div class="field">
-               <div class="fas fa-lock"></div>
-               <input type="password" placeholder="Sandi" name="password" required>
-            </div>
-            <button type="submit">MASUK</button>
-            <div class="link">
-               Bukan anggota?
-               <a href="#">Daftar sekarang!</a>
-            </div>
-         </form>
+  <head>
+    <meta charset="utf-8">
+    <title>Login ke Kabelin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="login-form">
+      <div class="text">
+        SELAMAT DATANG!
       </div>
-   </body>
+      <form id="loginForm">
+        <div class="field">
+          <div class="fas fa-envelope"></div>
+          <input type="text" placeholder="Surel" name="email" required>
+        </div>
+        <div class="field">
+          <div class="fas fa-lock"></div>
+          <input type="password" placeholder="Sandi" name="password" required>
+        </div>
+        <button type="submit">MASUK</button>
+        <div class="link">
+          Bukan anggota?
+          <a href="#">Daftar sekarang!</a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // mencegah pengiriman form ke server
+        window.location.href = "../webpage/index.html"; // langsung redirect ke landing page
+      });
+    </script>
+  </body>
 </html>
